@@ -1,6 +1,30 @@
+# Default compiled classes #
+
 *.class
 
 # Package Files #
+
 *.jar
 *.war
 *.ear
+
+# Other Files
+
+*.tex~
+*.swp
+*.gitignore~
+*.aux
+*.log
+*.synctex.gz
+
+# Maven Generated Files #
+
+/target
+/target/*
+*/target/*
+
+# Eclipse project files
+.settings
+.project
+/.runtime
+*/.runtime
