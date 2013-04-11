@@ -22,13 +22,3 @@
 # Eclipse project files
 .settings
 .project
-/.runtime
-*/.runtime
-
-# Modelio files
-/.config
-/.config/*
-/.recycled
-/.recycled/*
-/mda
-/mda/*
