@@ -1,15 +1,12 @@
 # Default compiled classes #
-
 *.class
 
 # Package Files #
-
 *.jar
 *.war
 *.ear
 
 # Other Files
-
 *.tex~
 *.swp
 *.gitignore~
@@ -18,7 +15,6 @@
 *.synctex.gz
 
 # Maven Generated Files #
-
 /target
 /target/*
 */target/*
@@ -28,3 +24,11 @@
 .project
 /.runtime
 */.runtime
+
+# Modelio files
+/.config
+/.config/*
+/.recycled
+/.recycled/*
+/mda
+/mda/*
