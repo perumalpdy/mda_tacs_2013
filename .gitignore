@@ -22,3 +22,4 @@
 # Eclipse project files
 .settings
 .project
+/codigo/PizzariaGeek/target/
