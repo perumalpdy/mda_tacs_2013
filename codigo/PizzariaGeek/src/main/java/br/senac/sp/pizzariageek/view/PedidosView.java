@@ -4,6 +4,7 @@ import br.senac.sp.pizzariageek.business.PedidosBusiness;
 import br.senac.sp.pizzariageek.entities.Adicional;
 import br.senac.sp.pizzariageek.entities.Cliente;
 import br.senac.sp.pizzariageek.entities.Combo;
+import br.senac.sp.pizzariageek.entities.Pedido;
 import br.senac.sp.pizzariageek.entities.Pizza;
 import br.senac.sp.pizzariageek.entities.Promocao;
 import br.senac.sp.pizzariageek.utils.ReportBuilder;
@@ -41,12 +42,8 @@ public class PedidosView {
         return true;
     }
 
-    public double calcularTotal() {
-        return 0;
-    }
-
-    public String finalizarPedido() {
-        return null;
+    public Pedido finalizarPedido() {
+        return pedidosBusiness.finalizarPedido();
     }
 
     public boolean iniciarPedido() {
@@ -71,6 +68,7 @@ public class PedidosView {
     }
 
     public void adicionarCombo(final Combo combo) {
+        pedidosBusiness.adicionarItem(combo);
     }
 
     public byte procurarPorPeriodo(final Date dataInicio, final Date dataFinal, final String tipoRelatorio) {

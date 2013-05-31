@@ -4,6 +4,7 @@ import br.senac.sp.pizzariageek.entities.Adicional;
 import br.senac.sp.pizzariageek.entities.Cliente;
 import br.senac.sp.pizzariageek.entities.Combo;
 import br.senac.sp.pizzariageek.entities.Consumivel;
+import br.senac.sp.pizzariageek.entities.ItemDePedido;
 import br.senac.sp.pizzariageek.entities.Pedido;
 import br.senac.sp.pizzariageek.entities.Pizza;
 import br.senac.sp.pizzariageek.entities.Promocao;
@@ -23,29 +24,52 @@ public class PedidosBusiness {
     private AdicionalRepository adicionalRepository;
     private ComboRepository comboRepository;
     private PromocaoBusiness promocaoBusiness;
-    private List<Pedido> pedidos;
+    private Cliente cliente;
+    private Pedido pedido;
+    private List<ItemDePedido> itens;
+    private double valorTotal = new Double(0);
+    
+    private static final Double QUANTIDADE_UM = new Double(1);
 
     public Cliente procurarClientePorTelefone(final String telefone) {
-        return clienteRepository.findByTelefone(telefone);
+        cliente = clienteRepository.findByTelefone(telefone);
+        return cliente;
     }
 
     public Cliente procurarClientePorEndereco(final String endereco) {
-        return clienteRepository.findByEndereco(endereco);
+        cliente = clienteRepository.findByEndereco(endereco);
+        return cliente;
     }
 
     public void adicionarItem(final Consumivel item) {
+        ItemDePedido itemDePedido = new ItemDePedido();
+        
+        itemDePedido.setConsumivel(item);
+        itemDePedido.setQuantidade(QUANTIDADE_UM);
+        
+        itens.add(itemDePedido);
     }
 
     public double calcularTotal() {
-        return 0;
+        for(ItemDePedido item : itens) {
+            valorTotal += item.getTotal();
+        }
+        
+        return valorTotal;
     }
 
     public void iniciarPedido() {
-        pedidos = new ArrayList<Pedido>();
+        itens = new ArrayList<ItemDePedido>();
     }
 
-    public Pedido finalizarPedido(final String Pedido) {
-        return null;
+    public Pedido finalizarPedido() {
+        Pedido pedido = new Pedido();
+        
+        pedido.setCliente(cliente);
+        pedido.setItems(itens);
+        pedido.setValorTotal(calcularTotal());
+        
+        return pedido;
     }
 
     public List<Adicional> obterTodosAdicionais() {

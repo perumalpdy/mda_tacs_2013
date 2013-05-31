@@ -3,7 +3,7 @@ package br.senac.sp.pizzariageek.entities;
 
 public interface Consumivel {
 
-    void getPreco();
+    double getPreco();
 
     int getValorMinimoEstoque();
 

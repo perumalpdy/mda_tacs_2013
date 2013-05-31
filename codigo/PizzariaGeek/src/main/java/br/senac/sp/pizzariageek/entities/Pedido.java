@@ -1,14 +1,36 @@
 package br.senac.sp.pizzariageek.entities;
 
-public class Pedido {
-    private Cliente cliente;
+import java.util.List;
 
-    private Cliente getCliente() {
-        // Automatically generated method. Please do not modify this code.
-        return this.cliente;
+public class Pedido {
+
+    private Cliente cliente;
+    private List<ItemDePedido> items;
+    private Double valorTotal;
+
+    public Cliente getCliente() {
+        return cliente;
     }
 
-    public ItemDePedido itemDePedido;
+    public void setCliente(Cliente cliente) {
+        this.cliente = cliente;
+    }
 
+    public List<ItemDePedido> getItems() {
+        return items;
+    }
 
+    public void setItems(List<ItemDePedido> items) {
+        this.items = items;
+    }
+
+    public Double getValorTotal() {
+        return valorTotal;
+    }
+
+    public void setValorTotal(Double valorTotal) {
+        this.valorTotal = valorTotal;
+    }
+
+    
 }
