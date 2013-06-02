@@ -39,19 +39,17 @@ public class PedidosView {
     }
 
     @objid ("a64c3132-a4af-11e2-9d99-70f1a1bff932")
-    public boolean adicionarAdicional(final Adicional adicional) {
-        // TODO Auto-generated return
-        return false;
+    public void adicionarAdicional(final Adicional adicional) {
     }
 
     @objid ("af866349-a4af-11e2-9d99-70f1a1bff932")
-    public boolean adicionarPizza(final Pizza pizza) {
-        // TODO Auto-generated return
-        return false;
+    public void adicionarPizza(final Pizza pizza) {
     }
 
     @objid ("53018955-a4b0-11e2-9d99-70f1a1bff932")
-    public void finalizarPedido() {
+    public Pedido finalizarPedido() {
+        // TODO Auto-generated return
+        return null;
     }
 
     @objid ("9c2b3ed5-a4b0-11e2-9d99-70f1a1bff932")
@@ -59,11 +57,15 @@ public class PedidosView {
     }
 
     @objid ("9f507909-a4b1-11e2-9d99-70f1a1bff932")
-    public void popularListaAdicionais() {
+    public List<Adicional> popularListaAdicionais() {
+        // TODO Auto-generated return
+        return null;
     }
 
     @objid ("adec9dad-a4b1-11e2-9d99-70f1a1bff932")
-    public void popularListaPizzas() {
+    public List<Pizza> popularListaPizzas() {
+        // TODO Auto-generated return
+        return null;
     }
 
     @objid ("d8dba53c-a510-11e2-89a9-70f1a1bff932")
@@ -84,6 +86,12 @@ public class PedidosView {
 
     @objid ("cef39c12-abb6-11e2-b492-70f1a1bff932")
     public byte procurarPorPeriodo(final Date dataInicio, final Date dataFinal, final String tipoRelatorio) {
+        // TODO Auto-generated return
+        return 0;
+    }
+
+    @objid ("0545c779-cb94-11e2-83f7-70f1a1bff932")
+    public double calcularValorTotalPedido() {
         // TODO Auto-generated return
         return 0;
     }

@@ -55,6 +55,24 @@ public class PedidosBusiness {
         this.promocaoBusiness = value;
     }
 
+    @mdl.prop
+    @objid ("0ad02471-cb3e-11e2-8eae-70f1a1bff932")
+    private ComboRepository comboRepository;
+
+    @mdl.propsetter
+    public void setComboRepository(final ComboRepository value) {
+        // Automatically generated method. Please do not modify this code.
+        this.comboRepository = value;
+    }
+
+    @mdl.prop
+    @objid ("704f8817-cb3e-11e2-8eae-70f1a1bff932")
+    private Cliente cliente;
+
+    @mdl.prop
+    @objid ("73b04bf0-cb3e-11e2-8eae-70f1a1bff932")
+    private ItemDePedido[] itensDePedido;
+
 
     @objid ("3d3959cf-a4b0-11e2-9d99-70f1a1bff932")
     public Cliente procurarClientePorTelefone(final String telefone) {
@@ -73,7 +91,9 @@ public class PedidosBusiness {
     }
 
     @objid ("4b4c4f41-a4b0-11e2-9d99-70f1a1bff932")
-    public void calcularTotal() {
+    public double calcularTotal() {
+        // TODO Auto-generated return
+        return 0;
     }
 
     @objid ("64c25251-a4b0-11e2-9d99-70f1a1bff932")
@@ -81,7 +101,7 @@ public class PedidosBusiness {
     }
 
     @objid ("a4d4ee9e-a4b0-11e2-9d99-70f1a1bff932")
-    public Pedido finalizarPedido(final String Pedido) {
+    public Pedido finalizarPedido() {
         // TODO Auto-generated return
         return null;
     }

@@ -1,0 +1,137 @@
+JavaClass
+
+    packageDefinition
+    importsDefinition
+    classBody
+
+packageDefinition
+
+   package pathToClass ;
+
+pathToClass
+
+   pathIdentifier
+   pathIdentifier . 
+
+pathIdentifier
+
+   [a-z]
+
+importsDefinition
+
+   import canonicalName ;
+
+canonicalName
+
+   pathToClass . ClassName
+
+ClassName
+
+   ([A-Z][a-z0-9]+){2,}
+
+classBody
+
+   public class ClassName { members }
+
+members
+
+   []
+   attribute
+   method
+
+attribute
+
+   accessor modifier variable ;
+
+accessor
+
+   public
+   private
+   protected
+   "default"
+   
+modifier
+
+   modifier
+   modifier modifier
+   static
+   final
+
+variable
+
+   type typeName
+
+type
+
+   ClassName
+   Collection
+   primitive
+
+primitive
+
+   byte
+   short
+   int
+   long
+   float
+   double
+   boolean
+   char
+
+typeName
+
+   ([a-z0-9][A-Z]+){2,}
+
+Collection
+
+   CollectionName < ClassName >
+
+CollectionName
+
+   List
+   Set
+   Map
+
+method
+
+   accessor modifier methodIdentifier ( ) { body }
+   accessor modifier methodIdentifier ( paramList ) { body }
+
+methodIdentifier
+
+   type methodName
+
+methodName
+
+   ([a-z0-9][A-Z]+){2,}
+
+paramList
+
+   variable
+   variable ,
+
+body
+
+   ""
+   statement
+
+statement
+
+   objectCreation ;
+   operationCall ;
+   returnStatement ;
+
+objectCreation
+
+   ClassName typeName = new ClassName ( )
+   ClassName typeName = new ClassName ( paramList )
+
+operationCall
+
+    typeName . methodName ( )
+	typeName . methodName ( variableValue )
+	typeName . methodName ( variableValue , )
+
+returnStatement
+
+    return type
